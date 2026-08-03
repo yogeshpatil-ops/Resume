@@ -1,295 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yogesh Patil – DevOps Engineer</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<title>Yogesh Patil — DevOps Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --ink:#101820;
+    --slate:#3b4a55;
+    --mist:#6b7a85;
+    --line:#d9e1e5;
+    --paper:#fbfcfc;
+    --panel:#eef3f4;
+    --signal:#0f8a8a;
+    --signal-dim:#0f8a8a1a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--panel);}
+  body{
+    font-family:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:850px;
+    margin:32px auto;
+    background:var(--paper);
+    box-shadow:0 1px 3px rgba(16,24,32,0.08), 0 12px 32px rgba(16,24,32,0.06);
+    padding:52px 56px 48px;
+  }
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f0f2f5;
-      color: #222;
-      line-height: 1.6;
-    }
+  /* ---------- HEADER ---------- */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:18px;
+    margin-bottom:22px;
+    gap:24px;
+  }
+  .name-block h1{
+    font-family:"JetBrains Mono","SF Mono",Consolas,monospace;
+    font-size:30px;
+    letter-spacing:-0.5px;
+    margin:0 0 6px 0;
+    font-weight:700;
+  }
+  .name-block h1 .prompt{color:var(--signal); margin-right:2px;}
+  .role-line{
+    font-size:13.5px;
+    color:var(--slate);
+    letter-spacing:0.3px;
+    font-weight:500;
+  }
+  .role-line .sep{color:var(--signal); margin:0 8px; font-weight:700;}
+  .contact-block{
+    text-align:right;
+    font-size:12.5px;
+    color:var(--slate);
+    line-height:1.9;
+    white-space:nowrap;
+    padding-top:4px;
+  }
+  .contact-block a{color:var(--slate); text-decoration:none;}
+  .contact-block div span.tag{
+    color:var(--signal);
+    font-family:"JetBrains Mono",monospace;
+    font-size:11px;
+    margin-right:6px;
+  }
 
-    .page {
-      max-width: 860px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 48px 52px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-      border-radius: 6px;
-    }
+  /* ---------- SECTION HEADINGS ---------- */
+  h2.section{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--signal);
+    margin:28px 0 12px 0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  h2.section::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+  h2.section:first-of-type{margin-top:0;}
 
-    /* Header */
-    header {
-      text-align: center;
-      margin-bottom: 28px;
-      border-bottom: 2px solid #1a73e8;
-      padding-bottom: 20px;
-    }
+  /* ---------- SUMMARY ---------- */
+  .summary{
+    font-size:13.6px;
+    line-height:1.75;
+    color:var(--slate);
+    max-width:100%;
+  }
+  .summary b{color:var(--ink); font-weight:600;}
 
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #111;
-    }
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:172px 1fr;
+    row-gap:9px;
+    column-gap:16px;
+    font-size:12.8px;
+  }
+  .skills-grid dt{
+    font-family:"JetBrains Mono",monospace;
+    color:var(--ink);
+    font-weight:600;
+    font-size:11.3px;
+    padding-top:2px;
+  }
+  .skills-grid dd{
+    margin:0;
+    color:var(--slate);
+    line-height:1.6;
+  }
+  .skills-grid dd .chip{
+    display:inline-block;
+    background:var(--signal-dim);
+    color:#0a6b6b;
+    border:1px solid #0f8a8a33;
+    border-radius:3px;
+    padding:1.5px 7px;
+    margin:0 4px 4px 0;
+    font-size:11.5px;
+    font-family:"JetBrains Mono",monospace;
+  }
 
-    header .title {
-      font-size: 1.05rem;
-      color: #555;
-      margin: 4px 0 12px;
-      font-style: italic;
-    }
+  /* ---------- EXPERIENCE ---------- */
+  .job-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-top:4px;
+  }
+  .job-title{
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .job-dates{
+    font-family:"JetBrains Mono",monospace;
+    font-size:11.5px;
+    color:var(--signal);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .company-line{
+    font-size:12.8px;
+    color:var(--mist);
+    margin-top:2px;
+    margin-bottom:14px;
+    font-style:italic;
+  }
+  .client-block{margin-bottom:16px;}
+  .client-block:last-child{margin-bottom:0;}
+  .client-name{
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--slate);
+    margin:0 0 6px 2px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .client-name::before{
+    content:"›";
+    color:var(--signal);
+    font-weight:900;
+  }
+  ul.bullets{
+    margin:0 0 0 4px;
+    padding-left:16px;
+    list-style:none;
+  }
+  ul.bullets li{
+    position:relative;
+    font-size:12.6px;
+    line-height:1.62;
+    color:var(--slate);
+    margin-bottom:6px;
+    padding-left:12px;
+  }
+  ul.bullets li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:5px;
+    height:5px;
+    background:var(--signal);
+    border-radius:50%;
+  }
+  ul.bullets li b{color:var(--ink); font-weight:700;}
 
-    header .contact {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.9rem;
-      color: #444;
-    }
+  /* ---------- EDUCATION ---------- */
+  .edu-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-size:13px;
+  }
+  .edu-degree{font-weight:700; color:var(--ink);}
+  .edu-year{
+    font-family:"JetBrains Mono",monospace;
+    color:var(--signal);
+    font-weight:600;
+    font-size:11.5px;
+  }
+  .edu-school{color:var(--slate); font-size:12.6px; margin-top:2px;}
 
-    header .contact a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-
-    header .contact a:hover { text-decoration: underline; }
-
-    header .contact span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* Sections */
-    section { margin-bottom: 26px; }
-
-    section h2 {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #1a73e8;
-      border-bottom: 1px solid #d0d8e8;
-      padding-bottom: 5px;
-      margin-bottom: 14px;
-    }
-
-    /* Summary */
-    .summary p { font-size: 0.95rem; color: #333; }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 24px;
-    }
-
-    .skill-item { font-size: 0.9rem; }
-    .skill-item strong { color: #1a73e8; }
-
-    /* Experience */
-    .job { margin-bottom: 22px; }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .job-header h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #111;
-    }
-
-    .job-header .date {
-      font-size: 0.88rem;
-      color: #666;
-      white-space: nowrap;
-    }
-
-    .job-company {
-      font-size: 0.92rem;
-      color: #555;
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-
-    .client-block { margin-bottom: 14px; }
-
-    .client-block h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 6px;
-    }
-
-    .client-block h4::before {
-      content: "– ";
-      color: #1a73e8;
-    }
-
-    .client-block ul {
-      list-style: none;
-      padding-left: 16px;
-    }
-
-    .client-block ul li {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 4px;
-      padding-left: 14px;
-      position: relative;
-    }
-
-    .client-block ul li::before {
-      content: "∗";
-      position: absolute;
-      left: 0;
-      color: #1a73e8;
-    }
-
-    /* Education */
-    .edu-block {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-    }
-
-    .edu-block h3 { font-size: 1rem; font-weight: 700; }
-    .edu-block .year { font-size: 0.88rem; color: #666; }
-    .edu-block p { width: 100%; font-size: 0.9rem; color: #555; font-style: italic; }
-
-    /* Additional */
-    .additional p { font-size: 0.92rem; color: #333; }
-
-    /* Print */
-    @media print {
-      body { background: #fff; }
-      .page { box-shadow: none; margin: 0; padding: 32px 40px; }
-    }
-
-    @media (max-width: 600px) {
-      .page { padding: 28px 20px; }
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none; margin:0; padding:36px 40px;}
+  }
+  @media (max-width:640px){
+    .page{padding:28px 22px;}
+    header{flex-direction:column;}
+    .contact-block{text-align:left;}
+    .skills-grid{grid-template-columns:1fr;}
+  }
+</style>
 </head>
 <body>
-  <div class="page">
+<div class="page">
 
-    <header>
-      <h1>Yogesh Patil</h1>
-      <p class="title">DevOps Engineer</p>
-      <div class="contact">
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg>
-          +91-8600566088
-        </span>
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:yogeshpatil.ops@gmail.com">yogeshpatil.ops@gmail.com</a>
-        </span>
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-        </span>
-      </div>
-    </header>
+  <header>
+    <div class="name-block">
+      <h1><span class="prompt">~$</span>Yogesh Patil</h1>
+      <div class="role-line">DevOps Engineer<span class="sep">|</span>Cloud Infrastructure<span class="sep">|</span>CI/CD<span class="sep">|</span>Kubernetes</div>
+    </div>
+    <div class="contact-block">
+      <div><span class="tag">tel</span>+91-8600566088</div>
+      <div><span class="tag">mail</span><a href="mailto:yogeshpatil.ops@gmail.com">yogeshpatil.ops@gmail.com</a></div>
+      <div><span class="tag">web</span><a href="#">LinkedIn</a></div>
+      <div><span class="tag">loc</span>India</div>
+    </div>
+  </header>
 
-    <section class="summary">
-      <h2>Professional Summary</h2>
-      <p>
-        DevOps Engineer with 3 years of experience building scalable infrastructure, automating CI/CD pipelines,
-        and enhancing system reliability across cloud and on-premise environments. Expertise in Kubernetes, Docker,
-        Terraform, and observability tools such as Grafana and Prometheus. Reduced deployment time by 50%, achieved
-        99.9% uptime, and cut manual monitoring effort by 80%. AWS Certified Solutions Architect – Associate with
-        experience in Linux and Windows environments.
-      </p>
-    </section>
+  <h2 class="section">Summary</h2>
+  <p class="summary">
+    Results-driven DevOps Engineer with <b>3+ years</b> of experience designing and managing scalable cloud infrastructure,
+    automating CI/CD pipelines, and improving system reliability across <b>AWS</b> and <b>Azure</b> environments. Hands-on
+    expertise in Kubernetes, Docker, Terraform (IaC), GitLab CI, GitHub Actions, and observability tools including
+    Prometheus and Grafana. Proven track record delivering microservices-based deployments, reducing deployment time by
+    <b>50%</b>, achieving <b>99.9% uptime SLA</b>, and cutting manual monitoring effort by <b>80%</b>. Experienced in SRE
+    practices, DevSecOps, and Agile delivery models.
+  </p>
 
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-item"><strong>DevOps &amp; Automation:</strong> Jenkins, GitHub Actions, Terraform, Ansible</div>
-        <div class="skill-item"><strong>Containers &amp; Cloud:</strong> Docker, Docker Compose, Kubernetes, AWS, GCP</div>
-        <div class="skill-item"><strong>Monitoring &amp; Logging:</strong> Prometheus, Grafana, Zabbix, Loki, Blackbox Exporter</div>
-        <div class="skill-item"><strong>Scripting &amp; Version Control:</strong> Bash, Python, Git, GitHub</div>
-        <div class="skill-item"><strong>Web, OS &amp; Database:</strong> Nginx, Linux, Windows Server, PostgreSQL</div>
-        <div class="skill-item"><strong>Data Pipelines:</strong> Airbyte, Apache Airflow, dbt</div>
-      </div>
-    </section>
+  <h2 class="section">Technical Skills</h2>
+  <dl class="skills-grid">
+    <dt>CI/CD &amp; Automation</dt>
+    <dd><span class="chip">Jenkins</span><span class="chip">GitHub Actions</span><span class="chip">GitLab CI</span><span class="chip">GitOps</span></dd>
 
-    <section>
-      <h2>Professional Experience</h2>
-      <div class="job">
-        <div class="job-header">
-          <h3>DevOps Engineer</h3>
-          <span class="date">Feb 2023 – Present</span>
-        </div>
-        <p class="job-company">Nexgensis Technologies Pvt. Ltd.</p>
+    <dt>Containers &amp; Orchestration</dt>
+    <dd><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Kubernetes (K3s, EKS)</span><span class="chip">Helm</span></dd>
 
-        <div class="client-block">
-          <h4>Client: Serum Institute of India</h4>
-          <ul>
-            <li>Implemented Airflow, Airbyte, and Zabbix on Kubernetes (K3s), reducing manual workflows by 85%.</li>
-            <li>Built custom Airflow Docker images with DBT and Airbyte connectors processing 100K+ records daily.</li>
-            <li>Configured Tableau Server with Zabbix alerts, reducing incident response time by 40%.</li>
-            <li>Ensured 100% data persistence using persistent volumes.</li>
-            <li>Designed recovery architecture with RTO of 4 hours and RPO of 24 hours.</li>
-          </ul>
-        </div>
+    <dt>Cloud Platforms</dt>
+    <dd><span class="chip">AWS · EC2, S3, IAM, RDS, Lambda, EKS, VPC</span><span class="chip">Azure</span><span class="chip">GCP</span></dd>
 
-        <div class="client-block">
-          <h4>Client: Pidilite Industries</h4>
-          <ul>
-            <li>Deployed Docker Compose environments reducing setup time from 2 hours to 15 minutes.</li>
-            <li>Managed monitoring stack (Grafana, Prometheus), improving coverage by 90%.</li>
-            <li>Configured NGINX reverse proxy with SSL for secure deployments.</li>
-            <li>Built CI/CD pipelines using GitHub Actions reducing manual effort by 50%.</li>
-            <li>Designed zero-downtime deployments achieving 99.9% uptime.</li>
-          </ul>
-        </div>
+    <dt>Infrastructure as Code</dt>
+    <dd><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">CloudFormation</span></dd>
 
-        <div class="client-block">
-          <h4>Client: Minda Sensor (IoT)</h4>
-          <ul>
-            <li>Designed IoT monitoring system for 30+ Raspberry Pi devices reducing manual checks by 80%.</li>
-            <li>Automated provisioning using Ansible saving 10+ hours/week.</li>
-            <li>Built Docker environments on Windows with fast startup time (&lt;2 mins).</li>
-            <li>Improved release speed by 60% using GitHub Actions.</li>
-            <li>Created Grafana dashboards and Prometheus alerts reducing downtime by 75%.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <dt>Monitoring &amp; Observability</dt>
+    <dd><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Zabbix</span><span class="chip">Loki</span><span class="chip">Blackbox Exporter</span><span class="chip">ELK Stack</span></dd>
 
-    <section>
-      <h2>Education</h2>
-      <div class="edu-block">
-        <h3>Bachelor of Engineering</h3>
-        <span class="year">2022</span>
-        <p>Savitribai Phule Pune University, Pune</p>
-      </div>
-    </section>
+    <dt>Security &amp; Compliance</dt>
+    <dd><span class="chip">IAM</span><span class="chip">RBAC</span><span class="chip">SSL/TLS</span><span class="chip">Secrets Mgmt</span><span class="chip">DevSecOps</span></dd>
 
-    <section>
-      <h2>Additional Information</h2>
-      <div class="additional">
-        <p><strong>Certification:</strong> AWS Certified Solutions Architect – Associate</p>
-      </div>
-    </section>
+    <dt>Scripting &amp; Version Control</dt>
+    <dd><span class="chip">Bash</span><span class="chip">Python</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span></dd>
 
+    <dt>Architecture</dt>
+    <dd><span class="chip">Microservices</span><span class="chip">SRE</span><span class="chip">Agile</span><span class="chip">DR (RTO/RPO)</span><span class="chip">Zero-Downtime Deploys</span></dd>
+
+    <dt>Web, OS &amp; Database</dt>
+    <dd><span class="chip">Nginx</span><span class="chip">Linux</span><span class="chip">Windows Server</span><span class="chip">PostgreSQL</span></dd>
+  </dl>
+
+  <h2 class="section">Professional Experience</h2>
+
+  <div class="job-header">
+    <div class="job-title">DevOps Engineer</div>
+    <div class="job-dates">Feb 2023 — Present</div>
   </div>
+  <div class="company-line">Nexgensis Technologies Pvt. Ltd.</div>
+
+  <div class="client-block">
+    <div class="client-name">Client: Serum Institute of India</div>
+    <ul class="bullets">
+      <li>Deployed microservices workloads on <b>Kubernetes (K3s)</b>, orchestrating Airflow, Airbyte, and Zabbix — reducing manual workflows by <b>85%</b>.</li>
+      <li>Built custom Docker images for Apache Airflow with dbt and Airbyte connectors, processing <b>100K+ records daily</b> with zero data loss.</li>
+      <li>Configured Tableau Server monitoring with Zabbix alerting, reducing incident response time by <b>40%</b>.</li>
+      <li>Implemented persistent volume strategies on Kubernetes ensuring <b>100% data persistence</b> and high availability.</li>
+      <li>Designed DR architecture with <b>RTO of 4 hours</b> and <b>RPO of 24 hours</b>, aligned with SRE best practices.</li>
+    </ul>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Client: Pidilite Industries</div>
+    <ul class="bullets">
+      <li>Architected Docker Compose environments for microservices, cutting setup time from 2 hours to 15 minutes (<b>87% reduction</b>).</li>
+      <li>Built end-to-end CI/CD pipelines using GitHub Actions and GitLab CI, reducing manual release effort by <b>50%</b>.</li>
+      <li>Configured GitHub Actions workflows to trigger staging deployments on PR merges and production releases on tag pushes, ensuring a controlled, auditable release process.</li>
+      <li>Managed full observability stack (Prometheus, Grafana, Loki) improving monitoring coverage by <b>90%</b>.</li>
+      <li>Configured NGINX reverse proxy with SSL/TLS and IAM-based access controls, enforcing DevSecOps standards.</li>
+      <li>Designed zero-downtime blue-green deployment strategy achieving <b>99.9% uptime SLA</b> across all production services.</li>
+    </ul>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Client: Minda Sensor (IoT)</div>
+    <ul class="bullets">
+      <li>Deployed IoT infrastructure monitoring for <b>30+ Raspberry Pi</b> edge devices, reducing manual checks by <b>80%</b>.</li>
+      <li>Automated provisioning using Ansible playbooks, saving <b>10+ engineering hours</b> per week.</li>
+      <li>Built containerised Docker environments on Windows Server with startup time under 2 minutes.</li>
+      <li>Implemented GitLab CI pipelines improving release velocity by <b>60%</b> with automated testing and deployment gates.</li>
+      <li>Created Grafana dashboards with Prometheus alerts, reducing system downtime by <b>75%</b>.</li>
+    </ul>
+  </div>
+
+  <h2 class="section">Education</h2>
+  <div class="edu-row">
+    <span class="edu-degree">Bachelor of Engineering (B.E.)</span>
+    <span class="edu-year">2022</span>
+  </div>
+  <div class="edu-school">Savitribai Phule Pune University, Pune, Maharashtra</div>
+
+</div>
 </body>
 </html>
