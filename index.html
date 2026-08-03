@@ -1,342 +1,173 @@
-
-
-Yogesh patil resume · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Yogesh Patil — DevOps Engineer</title>
+<title>Yogesh Patil - DevOps Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  :root{
-    --ink:#101820;
-    --slate:#3b4a55;
-    --mist:#6b7a85;
-    --line:#d9e1e5;
-    --paper:#fbfcfc;
-    --panel:#eef3f4;
-    --signal:#0f8a8a;
-    --signal-dim:#0f8a8a1a;
-  }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--panel);}
   body{
-    font-family:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
+    font-family:Calibri, Arial, Helvetica, sans-serif;
+    color:#000;
+    margin:0;
+    background:#fff;
   }
   .page{
     max-width:850px;
-    margin:32px auto;
-    background:var(--paper);
-    box-shadow:0 1px 3px rgba(16,24,32,0.08), 0 12px 32px rgba(16,24,32,0.06);
-    padding:52px 56px 48px;
+    margin:0 auto;
+    padding:40px 50px;
   }
- 
-  /* ---------- HEADER ---------- */
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    border-bottom:2px solid var(--ink);
-    padding-bottom:18px;
-    margin-bottom:22px;
-    gap:24px;
+  h1{
+    text-align:center;
+    font-size:24px;
+    margin:0 0 4px 0;
+    font-weight:bold;
   }
-  .name-block h1{
-    font-family:"JetBrains Mono","SF Mono",Consolas,monospace;
-    font-size:30px;
-    letter-spacing:-0.5px;
-    margin:0 0 6px 0;
-    font-weight:700;
+  .title-line{
+    text-align:center;
+    font-size:13px;
+    margin:0 0 4px 0;
   }
-  .name-block h1 .prompt{color:var(--signal); margin-right:2px;}
-  .role-line{
-    font-size:13.5px;
-    color:var(--slate);
-    letter-spacing:0.3px;
-    font-weight:500;
-  }
-  .role-line .sep{color:var(--signal); margin:0 8px; font-weight:700;}
-  .contact-block{
-    text-align:right;
-    font-size:12.5px;
-    color:var(--slate);
-    line-height:1.9;
-    white-space:nowrap;
-    padding-top:4px;
-  }
-  .contact-block a{color:var(--slate); text-decoration:none;}
-  .contact-block div span.tag{
-    color:var(--signal);
-    font-family:"JetBrains Mono",monospace;
-    font-size:11px;
-    margin-right:6px;
-  }
- 
-  /* ---------- SECTION HEADINGS ---------- */
-  h2.section{
-    font-family:"JetBrains Mono",monospace;
+  .contact-line{
+    text-align:center;
     font-size:12px;
-    letter-spacing:2px;
+    margin:0 0 14px 0;
+  }
+  .contact-line a{
+    color:#000;
+    text-decoration:none;
+  }
+  h2{
+    font-size:13px;
     text-transform:uppercase;
-    color:var(--signal);
-    margin:28px 0 12px 0;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    border-bottom:1.5px solid #000;
+    padding-bottom:2px;
+    margin:18px 0 8px 0;
+    letter-spacing:0.5px;
   }
-  h2.section::after{
-    content:"";
-    flex:1;
-    height:1px;
-    background:var(--line);
+  p{
+    font-size:12.5px;
+    line-height:1.5;
+    margin:0 0 4px 0;
+    text-align:justify;
   }
-  h2.section:first-of-type{margin-top:0;}
- 
-  /* ---------- SUMMARY ---------- */
-  .summary{
-    font-size:13.6px;
-    line-height:1.75;
-    color:var(--slate);
-    max-width:100%;
-  }
-  .summary b{color:var(--ink); font-weight:600;}
- 
-  /* ---------- SKILLS ---------- */
-  .skills-grid{
-    display:grid;
-    grid-template-columns:172px 1fr;
-    row-gap:9px;
-    column-gap:16px;
-    font-size:12.8px;
-  }
-  .skills-grid dt{
-    font-family:"JetBrains Mono",monospace;
-    color:var(--ink);
-    font-weight:600;
-    font-size:11.3px;
-    padding-top:2px;
-  }
-  .skills-grid dd{
-    margin:0;
-    color:var(--slate);
-    line-height:1.6;
-  }
-  .skills-grid dd .chip{
-    display:inline-block;
-    background:var(--signal-dim);
-    color:#0a6b6b;
-    border:1px solid #0f8a8a33;
-    border-radius:3px;
-    padding:1.5px 7px;
-    margin:0 4px 4px 0;
-    font-size:11.5px;
-    font-family:"JetBrains Mono",monospace;
-  }
- 
-  /* ---------- EXPERIENCE ---------- */
-  .job-header{
+  .skills p{margin:0 0 4px 0;}
+  .skills b{font-weight:bold;}
+  .job-title{
+    font-size:13px;
+    font-weight:bold;
     display:flex;
     justify-content:space-between;
-    align-items:baseline;
-    margin-top:4px;
+    margin-top:8px;
   }
-  .job-title{
-    font-size:14.5px;
-    font-weight:700;
-    color:var(--ink);
-  }
-  .job-dates{
-    font-family:"JetBrains Mono",monospace;
-    font-size:11.5px;
-    color:var(--signal);
-    font-weight:600;
-    white-space:nowrap;
-  }
-  .company-line{
-    font-size:12.8px;
-    color:var(--mist);
-    margin-top:2px;
-    margin-bottom:14px;
-    font-style:italic;
-  }
-  .client-block{margin-bottom:16px;}
-  .client-block:last-child{margin-bottom:0;}
-  .client-name{
+  .company{
     font-size:12.5px;
-    font-weight:700;
-    color:var(--slate);
-    margin:0 0 6px 2px;
-    display:flex;
-    align-items:center;
-    gap:6px;
+    font-style:italic;
+    margin:0 0 4px 0;
   }
-  .client-name::before{
-    content:"›";
-    color:var(--signal);
-    font-weight:900;
+  .client{
+    font-size:12.5px;
+    font-weight:bold;
+    margin:8px 0 2px 12px;
   }
-  ul.bullets{
-    margin:0 0 0 4px;
-    padding-left:16px;
-    list-style:none;
+  ul{
+    margin:0 0 6px 0;
+    padding-left:34px;
   }
-  ul.bullets li{
-    position:relative;
-    font-size:12.6px;
-    line-height:1.62;
-    color:var(--slate);
-    margin-bottom:6px;
-    padding-left:12px;
+  ul li{
+    font-size:12.5px;
+    line-height:1.45;
+    margin-bottom:3px;
   }
-  ul.bullets li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:8px;
-    width:5px;
-    height:5px;
-    background:var(--signal);
-    border-radius:50%;
-  }
-  ul.bullets li b{color:var(--ink); font-weight:700;}
- 
-  /* ---------- EDUCATION ---------- */
   .edu-row{
     display:flex;
     justify-content:space-between;
-    align-items:baseline;
-    font-size:13px;
+    font-size:12.5px;
+    font-weight:bold;
+    margin-top:6px;
   }
-  .edu-degree{font-weight:700; color:var(--ink);}
-  .edu-year{
-    font-family:"JetBrains Mono",monospace;
-    color:var(--signal);
-    font-weight:600;
-    font-size:11.5px;
+  .edu-school{
+    font-size:12.5px;
+    margin:2px 0 0 0;
   }
-  .edu-school{color:var(--slate); font-size:12.6px; margin-top:2px;}
- 
   @media print{
-    body{background:#fff;}
-    .page{box-shadow:none; margin:0; padding:36px 40px;}
-  }
-  @media (max-width:640px){
-    .page{padding:28px 22px;}
-    header{flex-direction:column;}
-    .contact-block{text-align:left;}
-    .skills-grid{grid-template-columns:1fr;}
+    .page{padding:20px 40px;}
   }
 </style>
 </head>
 <body>
 <div class="page">
  
-  <header>
-    <div class="name-block">
-      <h1><span class="prompt">~$</span>Yogesh Patil</h1>
-      <div class="role-line">DevOps Engineer<span class="sep">|</span>Cloud Infrastructure<span class="sep">|</span>CI/CD<span class="sep">|</span>Kubernetes</div>
-    </div>
-    <div class="contact-block">
-      <div><span class="tag">tel</span>+91-8600566088</div>
-      <div><span class="tag">mail</span><a href="mailto:yogeshpatil.ops@gmail.com">yogeshpatil.ops@gmail.com</a></div>
-      <div><span class="tag">web</span><a href="#">LinkedIn</a></div>
-      <div><span class="tag">loc</span>India</div>
-    </div>
-  </header>
+  <h1>Yogesh Patil</h1>
+  <p class="title-line">DevOps Engineer | Cloud Infrastructure | CI/CD | Kubernetes</p>
+  <p class="contact-line">+91-8600566088 | <a href="mailto:yogeshpatil.ops@gmail.com">yogeshpatil.ops@gmail.com</a> | <a href="#">LinkedIn</a> | India</p>
  
-  <h2 class="section">Summary</h2>
-  <p class="summary">
-    Results-driven DevOps Engineer with <b>3+ years</b> of experience designing and managing scalable cloud infrastructure,
-    automating CI/CD pipelines, and improving system reliability across <b>AWS</b> and <b>Azure</b> environments. Hands-on
-    expertise in Kubernetes, Docker, Terraform (IaC), GitLab CI, GitHub Actions, and observability tools including
+  <h2>Professional Summary</h2>
+  <p>
+    Results-driven DevOps Engineer with 3+ years of experience designing and managing scalable cloud infrastructure,
+    automating CI/CD pipelines, and improving system reliability across AWS and Azure environments. Hands-on expertise in
+    Kubernetes, Docker, Terraform (Infrastructure as Code), GitLab CI, GitHub Actions, and observability tools including
     Prometheus and Grafana. Proven track record delivering microservices-based deployments, reducing deployment time by
-    <b>50%</b>, achieving <b>99.9% uptime SLA</b>, and cutting manual monitoring effort by <b>80%</b>. Experienced in SRE
-    practices, DevSecOps, and Agile delivery models.
+    50%, achieving 99.9% uptime SLA, and cutting manual monitoring effort by 80%. Experienced in SRE practices, DevSecOps,
+    and Agile delivery models.
   </p>
  
-  <h2 class="section">Technical Skills</h2>
-  <dl class="skills-grid">
-    <dt>CI/CD &amp; Automation</dt>
-    <dd><span class="chip">Jenkins</span><span class="chip">GitHub Actions</span><span class="chip">GitLab CI</span><span class="chip">GitOps</span></dd>
- 
-    <dt>Containers &amp; Orchestration</dt>
-    <dd><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Kubernetes (K3s, EKS)</span><span class="chip">Helm</span></dd>
- 
-    <dt>Cloud Platforms</dt>
-    <dd><span class="chip">AWS · EC2, S3, IAM, RDS, Lambda, EKS, VPC</span><span class="chip">Azure</span><span class="chip">GCP</span></dd>
- 
-    <dt>Infrastructure as Code</dt>
-    <dd><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">CloudFormation</span></dd>
- 
-    <dt>Monitoring &amp; Observability</dt>
-    <dd><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">Zabbix</span><span class="chip">Loki</span><span class="chip">Blackbox Exporter</span><span class="chip">ELK Stack</span></dd>
- 
-    <dt>Security &amp; Compliance</dt>
-    <dd><span class="chip">IAM</span><span class="chip">RBAC</span><span class="chip">SSL/TLS</span><span class="chip">Secrets Mgmt</span><span class="chip">DevSecOps</span></dd>
- 
-    <dt>Scripting &amp; Version Control</dt>
-    <dd><span class="chip">Bash</span><span class="chip">Python</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span></dd>
- 
-    <dt>Architecture</dt>
-    <dd><span class="chip">Microservices</span><span class="chip">SRE</span><span class="chip">Agile</span><span class="chip">DR (RTO/RPO)</span><span class="chip">Zero-Downtime Deploys</span></dd>
- 
-    <dt>Web, OS &amp; Database</dt>
-    <dd><span class="chip">Nginx</span><span class="chip">Linux</span><span class="chip">Windows Server</span><span class="chip">PostgreSQL</span></dd>
-  </dl>
- 
-  <h2 class="section">Professional Experience</h2>
- 
-  <div class="job-header">
-    <div class="job-title">DevOps Engineer</div>
-    <div class="job-dates">Feb 2023 — Present</div>
-  </div>
-  <div class="company-line">Nexgensis Technologies Pvt. Ltd.</div>
- 
-  <div class="client-block">
-    <div class="client-name">Client: Serum Institute of India</div>
-    <ul class="bullets">
-      <li>Deployed microservices workloads on <b>Kubernetes (K3s)</b>, orchestrating Airflow, Airbyte, and Zabbix — reducing manual workflows by <b>85%</b>.</li>
-      <li>Built custom Docker images for Apache Airflow with dbt and Airbyte connectors, processing <b>100K+ records daily</b> with zero data loss.</li>
-      <li>Configured Tableau Server monitoring with Zabbix alerting, reducing incident response time by <b>40%</b>.</li>
-      <li>Implemented persistent volume strategies on Kubernetes ensuring <b>100% data persistence</b> and high availability.</li>
-      <li>Designed DR architecture with <b>RTO of 4 hours</b> and <b>RPO of 24 hours</b>, aligned with SRE best practices.</li>
-    </ul>
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <p><b>CI/CD &amp; DevOps Automation:</b> Jenkins, GitHub Actions, GitLab CI, GitOps</p>
+    <p><b>Containers &amp; Orchestration:</b> Docker, Docker Compose, Kubernetes (K3s, EKS), Helm</p>
+    <p><b>Cloud Platforms:</b> AWS (EC2, S3, IAM, RDS, Lambda, EKS, VPC), Azure, GCP</p>
+    <p><b>Infrastructure as Code (IaC):</b> Terraform, Ansible, CloudFormation</p>
+    <p><b>Monitoring, Logging &amp; Observability:</b> Prometheus, Grafana, Zabbix, Loki, Blackbox Exporter, ELK Stack</p>
+    <p><b>Security &amp; Compliance:</b> IAM, RBAC, SSL/TLS, Secrets Management, DevSecOps</p>
+    <p><b>Scripting &amp; Version Control:</b> Bash, Python, Git, GitHub, GitLab</p>
+    <p><b>Architecture &amp; Methodologies:</b> Microservices, SRE, Agile, Disaster Recovery (RTO/RPO), Zero-Downtime Deployments</p>
+    <p><b>Web, OS &amp; Database:</b> Nginx, Linux, Windows Server, PostgreSQL</p>
   </div>
  
-  <div class="client-block">
-    <div class="client-name">Client: Pidilite Industries</div>
-    <ul class="bullets">
-      <li>Architected Docker Compose environments for microservices, cutting setup time from 2 hours to 15 minutes (<b>87% reduction</b>).</li>
-      <li>Built end-to-end CI/CD pipelines using GitHub Actions and GitLab CI, reducing manual release effort by <b>50%</b>.</li>
-      <li>Configured GitHub Actions workflows to trigger staging deployments on PR merges and production releases on tag pushes, ensuring a controlled, auditable release process.</li>
-      <li>Managed full observability stack (Prometheus, Grafana, Loki) improving monitoring coverage by <b>90%</b>.</li>
-      <li>Configured NGINX reverse proxy with SSL/TLS and IAM-based access controls, enforcing DevSecOps standards.</li>
-      <li>Designed zero-downtime blue-green deployment strategy achieving <b>99.9% uptime SLA</b> across all production services.</li>
-    </ul>
-  </div>
+  <h2>Professional Experience</h2>
  
-  <div class="client-block">
-    <div class="client-name">Client: Minda Sensor (IoT)</div>
-    <ul class="bullets">
-      <li>Deployed IoT infrastructure monitoring for <b>30+ Raspberry Pi</b> edge devices, reducing manual checks by <b>80%</b>.</li>
-      <li>Automated provisioning using Ansible playbooks, saving <b>10+ engineering hours</b> per week.</li>
-      <li>Built containerised Docker environments on Windows Server with startup time under 2 minutes.</li>
-      <li>Implemented GitLab CI pipelines improving release velocity by <b>60%</b> with automated testing and deployment gates.</li>
-      <li>Created Grafana dashboards with Prometheus alerts, reducing system downtime by <b>75%</b>.</li>
-    </ul>
+  <div class="job-title">
+    <span>DevOps Engineer</span>
+    <span>Feb 2023 – Present</span>
   </div>
+  <p class="company">Nexgensis Technologies Pvt. Ltd.</p>
  
-  <h2 class="section">Education</h2>
+  <p class="client">– Client: Serum Institute of India</p>
+  <ul>
+    <li>Deployed microservices workloads on Kubernetes (K3s), orchestrating Airflow, Airbyte, and Zabbix — reducing manual workflows by 85%.</li>
+    <li>Built custom Docker images for Apache Airflow with dbt and Airbyte connectors, processing 100K+ records daily with zero data loss.</li>
+    <li>Configured Tableau Server monitoring with Zabbix alerting, reducing incident response time by 40%.</li>
+    <li>Implemented persistent volume strategies on Kubernetes ensuring 100% data persistence and high availability.</li>
+    <li>Designed DR architecture with RTO of 4 hours and RPO of 24 hours, aligned with SRE best practices.</li>
+  </ul>
+ 
+  <p class="client">– Client: Pidilite Industries</p>
+  <ul>
+    <li>Architected Docker Compose environments for microservices, cutting setup time from 2 hours to 15 minutes (87% reduction).</li>
+    <li>Built end-to-end CI/CD pipelines using GitHub Actions and GitLab CI, reducing manual release effort by 50%.</li>
+    <li>Configured GitHub Actions workflows to trigger staging deployments on PR merges and production releases on tag pushes, ensuring a controlled, auditable release process.</li>
+    <li>Managed full observability stack (Prometheus, Grafana, Loki) improving monitoring coverage by 90%.</li>
+    <li>Configured NGINX reverse proxy with SSL/TLS and IAM-based access controls, enforcing DevSecOps standards.</li>
+    <li>Designed zero-downtime blue-green deployment strategy achieving 99.9% uptime SLA across all production services.</li>
+  </ul>
+ 
+  <p class="client">– Client: Minda Sensor (IoT)</p>
+  <ul>
+    <li>Deployed IoT infrastructure monitoring for 30+ Raspberry Pi edge devices, reducing manual checks by 80%.</li>
+    <li>Automated provisioning using Ansible playbooks, saving 10+ engineering hours per week.</li>
+    <li>Built containerised Docker environments on Windows Server with startup time under 2 minutes.</li>
+    <li>Implemented GitLab CI pipelines improving release velocity by 60% with automated testing and deployment gates.</li>
+    <li>Created Grafana dashboards with Prometheus alerts, reducing system downtime by 75%.</li>
+  </ul>
+ 
+  <h2>Education</h2>
   <div class="edu-row">
-    <span class="edu-degree">Bachelor of Engineering (B.E.)</span>
-    <span class="edu-year">2022</span>
+    <span>Bachelor of Engineering (B.E.)</span>
+    <span>2022</span>
   </div>
-  <div class="edu-school">Savitribai Phule Pune University, Pune, Maharashtra</div>
+  <p class="edu-school">Savitribai Phule Pune University, Pune, Maharashtra</p>
  
 </div>
 </body>
 </html>
- 
-
